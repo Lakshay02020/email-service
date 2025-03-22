@@ -6,7 +6,7 @@ FROM openjdk:17.0.1-jdk-slim
 
 
 # Step 4: Copy the JAR file into the container
-COPY --from=build target/invoice-generator-0.0.1-SNAPSHOT.jar email.jar
+COPY --from=build target/email-service-0.0.1-SNAPSHOT.jar email.jar
 
 # Step 5: Expose the application port
 EXPOSE 8080
