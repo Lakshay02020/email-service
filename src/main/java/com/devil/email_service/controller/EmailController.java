@@ -20,10 +20,10 @@ public class EmailController {
 
     @PostMapping(value = "/sendEmail", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<String> sendMail(
-            @RequestParam String toEmail,
-            @RequestParam String text,
-            @RequestParam String subject,
-            @RequestPart(required = false) MultipartFile resource) {
+            @RequestParam("toEmail") String toEmail,
+            @RequestParam("text") String text,
+            @RequestParam("subject") String subject,
+            @RequestPart(required = false, name = "resource") MultipartFile resource) {
         try {
             log.info("Request received to send email to {} with subject {} and text {}", toEmail, text, subject);
             if (resource != null && !resource.isEmpty())
