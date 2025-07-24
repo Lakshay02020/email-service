@@ -15,7 +15,7 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
-    @GetMapping(value = "/ping")
+    @GetMapping(value = "/api/ping")
     public void ping(){
         log.info("Ping received");
     }
